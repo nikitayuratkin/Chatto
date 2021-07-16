@@ -56,9 +56,21 @@ open class ChatInputBar: ReusableXibView {
         return self.textView
     }
 
-    @IBOutlet weak var scrollView: HorizontalStackScrollView!
-    @IBOutlet weak var textView: ExpandableTextView!
-    @IBOutlet weak var sendButton: UIButton!
+    lazy var scrollView: HorizontalStackScrollView = {
+       let scrollView = HorizontalStackScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    lazy var textView: ExpandableTextView = {
+       let textview = ExpandableTextView()
+        textview.translatesAutoresizingMaskIntoConstraints = false
+        return textview
+    }()
+    lazy var sendButton: UIButton = {
+       let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     @IBOutlet weak var topBorderHeightConstraint: NSLayoutConstraint!
 
     @IBOutlet var constraintsForHiddenTextView: [NSLayoutConstraint]!
@@ -239,6 +251,7 @@ extension ChatInputBar {
         self.tabBarContentInsets = appearance.tabBarAppearance.contentInsets
         self.sendButton.contentEdgeInsets = appearance.sendButtonAppearance.insets
         self.sendButton.setTitle(appearance.sendButtonAppearance.title, for: .normal)
+        self.sendButton.setImage(appearance.sendButtonAppearance.image, for: .normal)
         appearance.sendButtonAppearance.titleColors.forEach { (state, color) in
             self.sendButton.setTitleColor(color, for: state.controlState)
         }

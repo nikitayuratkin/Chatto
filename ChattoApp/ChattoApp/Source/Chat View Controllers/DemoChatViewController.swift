@@ -54,7 +54,8 @@ class DemoChatViewController: BaseChatViewController {
     override func createChatInputView() -> UIView {
         let chatInputView = ChatInputBar.loadNib()
         var appearance = ChatInputBarAppearance()
-        appearance.sendButtonAppearance.title = NSLocalizedString("Send", comment: "")
+        appearance.sendButtonAppearance.title = NSLocalizedString("", comment: "")
+        appearance.sendButtonAppearance.image = UIImage(named: "Ellipse")!
         appearance.textInputAppearance.placeholderText = NSLocalizedString("Type a message", comment: "")
         if self.shouldUseAlternativePresenter {
             let chatInputPresenter = ExpandableChatInputBarPresenter(
@@ -134,7 +135,7 @@ class DemoChatViewController: BaseChatViewController {
     func createChatInputItems() -> [ChatInputItemProtocol] {
         var items = [ChatInputItemProtocol]()
         items.append(self.createTextInputItem())
-        items.append(self.createPhotoInputItem())
+//        items.append(self.createPhotoInputItem())
         if self.shouldUseAlternativePresenter {
             items.append(self.customInputItem())
         }

@@ -41,7 +41,7 @@ open class ContentAwareInputItem {
             UIControlStateWrapper(state: .selected): UIImage(named: "custom-icon-selected", in: Bundle(for: ContentAwareInputItem.self), compatibleWith: nil)!,
             UIControlStateWrapper(state: .highlighted): UIImage(named: "custom-icon-selected", in: Bundle(for: ContentAwareInputItem.self), compatibleWith: nil)!
         ]
-        return TabInputButtonAppearance(images: images, size: nil)
+        return TabInputButtonAppearance( size: nil)
     }
 
     var customInputView: CustomInputView = {

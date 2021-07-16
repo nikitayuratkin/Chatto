@@ -25,11 +25,11 @@
 import UIKit
 
 public struct TabInputButtonAppearance {
-    public var images: [UIControlStateWrapper: UIImage]
+//    public var images: [UIControlStateWrapper: UIImage]
     public var size: CGSize?
 
-    public init(images: [UIControlStateWrapper: UIImage], size: CGSize?) {
-        self.images = images
+    public init(size: CGSize?) {
+//        self.images = images
         self.size = size
     }
 }
@@ -37,12 +37,12 @@ public struct TabInputButtonAppearance {
 public class TabInputButton: UIButton {
 
     static public func makeInputButton(withAppearance appearance: TabInputButtonAppearance, accessibilityID: String? = nil) -> TabInputButton {
-        let images = appearance.images
+//        let images = appearance.images
         let button = TabInputButton(type: .custom)
         button.isExclusiveTouch = true
-        images.forEach { (state, image) in
-            button.setImage(image, for: state.controlState)
-        }
+//        images.forEach { (state, image) in
+//            button.setImage(image, for: state.controlState)
+//        }
         if let accessibilityIdentifier = accessibilityID {
             button.accessibilityIdentifier = accessibilityIdentifier
         }

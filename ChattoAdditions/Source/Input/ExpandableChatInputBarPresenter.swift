@@ -71,7 +71,7 @@ public class ExpandableChatInputBarPresenter: NSObject, ChatInputBarPresenter {
     fileprivate var shouldIgnoreContainerBottomMarginUpdates: Bool = false
     fileprivate func updateContentContainer(withInputItem inputItem: ChatInputItemProtocol) {
         self.cleanCurrentInputView()
-        let responder = self.chatInputBar.textView!
+        let responder = self.chatInputBar.textView
         if inputItem.presentationMode == .keyboard {
             responder.becomeFirstResponder()
         } else if let inputView = inputItem.inputView, let inputPositionController = self.inputPositionController {

@@ -49,7 +49,7 @@ open class PhotosChatInputItem: ChatInputItemProtocol {
             UIControlStateWrapper(state: .selected): UIImage(named: "camera-icon-selected", in: Bundle.resources, compatibleWith: nil)!,
             UIControlStateWrapper(state: .highlighted): UIImage(named: "camera-icon-selected", in: Bundle.resources, compatibleWith: nil)!
         ]
-        return TabInputButtonAppearance(images: images, size: nil)
+        return TabInputButtonAppearance( size: nil)
     }
 
     lazy private var internalTabView: UIButton = {

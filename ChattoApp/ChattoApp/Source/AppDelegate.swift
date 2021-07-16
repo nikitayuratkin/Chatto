@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let rootViewController = ChatExamplesViewController()
+        let rootViewController = MessagesSelectionChatViewController()
         let window = UIWindow()
         window.rootViewController = UINavigationController(rootViewController: rootViewController)
         self.window = window
